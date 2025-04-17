@@ -1,5 +1,14 @@
 ﻿namespace Covene.Domain.Entities
 {
+    /// <summary>
+    /// The constructor is marked as 'internal' to restrict creation of Attendee objects to within the same assembly.
+    /// This enforces that Attendee instances are only created through controlled domain logic (e.g., via factories or aggregates),
+    /// preventing misuse from external code.
+    /// 
+    /// The properties use 'private set' to ensure immutability after construction,
+    /// maintaining a consistent and valid state for the Attendee entity as per DDD (Domain-Driven Design) principles.
+    /// </summary>
+
     public class Attendee
     {
         internal Attendee(Invitation invitation) { 
