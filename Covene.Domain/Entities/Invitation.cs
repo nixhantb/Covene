@@ -3,6 +3,16 @@
     public class Invitation
     {
 
+        internal Invitation(Guid id, Member member, Gathering gathering)
+        {
+            Id = id;
+            MemberId = member.Id;
+            GatheringId = gathering.Id;
+            Status = InvitationStatus.Pending;
+            CreatedOnUtc = DateTime.UtcNow;
+
+        }
+
         public Guid Id { get; private set; }
         public Guid GatheringId { get; private set; }
         public Guid MemberId { get; private set; }
